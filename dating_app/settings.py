@@ -98,6 +98,8 @@ TEMPLATES = [
 
 AWS_DEFAULT_ACL = None
 
+PASSWORD = 'password'
+
 WSGI_APPLICATION = 'dating_app.wsgi.application'
 
 
@@ -108,12 +110,35 @@ if "DATABASE_URL" in os.environ:
     DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
 else:
     print("Database URL not found. Using SQLite instead")
+    # DATABASES = {
+    #     'default': {
+    #         'ENGINE': 'django.db.backends.sqlite3',
+    #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    #     }
+    # }
+
+    # DATABASES = {
+    #     'default': {
+    #         'ENGINE': 'django.db.backends.mysql',
+    #         'NAME': 'rds_database',
+    #         'HOST': 'database.c3rvep7bruyr.us-east-1.rds.amazonaws.com',
+    #         'USER': 'admin',
+    #         'PASSWORD': PASSWORD,
+    #         'PORT':'3306',
+    #     },
+    # }
+
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'rds_database',
+            'HOST': 'database-1.coi928zakksb.us-east-1.rds.amazonaws.com',
+            'USER': 'admin',
+            'PASSWORD': PASSWORD,
+            'PORT':'3306',
+        },
     }
+
 
 AWS_S3_OBJECT_PARAMETERS = {
     'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
