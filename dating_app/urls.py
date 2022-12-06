@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf import settings
 from django.conf.urls.static import static
-from django.conf.urls import url, include
+from django.urls import include, re_path
 from django.contrib import admin
 from profiles import urls as profile_urls
 from chat import urls as chat_urls
@@ -28,12 +28,12 @@ from .settings import MEDIA_ROOT
 
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^', include(home_urls)),
-    url(r'accounts/', include(profile_urls)),
-    url(r'chat/', include(chat_urls)),
-    url(r'subscribe/', include(subscribe_urls)),
-    url(r'my-account/', include(account_urls)),
-    url(r'search/', include(search_urls)),
-    url(r'media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}) 
+    re_path(r'^admin/', admin.site.urls),
+    re_path(r'^', include(home_urls)),
+    re_path(r'accounts/', include(profile_urls)),
+    re_path(r'chat/', include(chat_urls)),
+    re_path(r'subscribe/', include(subscribe_urls)),
+    re_path(r'my-account/', include(account_urls)),
+    re_path(r'search/', include(search_urls)),
+    re_path(r'media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}) 
     ]

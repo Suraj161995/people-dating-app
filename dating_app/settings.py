@@ -19,6 +19,8 @@ try:
 except:
     print("Live cannot import env")
 
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "dating_app.settings")
+
 if os.environ.get('DEVELOPMENT'):
     development = True
 else:
@@ -35,14 +37,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('secret_key')
+#SECRET_KEY = os.environ.get('secret_key')
+SECRET_KEY = 'rz_+v)$2r&rgb_h90msytw56s1h&@qrgf09lu2$77*l4(t24ze'
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = development
+DEBUG = True
 
-ALLOWED_HOSTS = [os.environ.get('HOSTNAME'), "5a824725c9bd45ef92e402d580741815.vfs.cloud9.us-east-1.amazonaws.com"]
-
+#ALLOWED_HOSTS = [os.environ.get('HOSTNAME'), "5a824725c9bd45ef92e402d580741815.vfs.cloud9.us-east-1.amazonaws.com"]
+ALLOWED_HOSTS = ['127.0.0.1', "5a824725c9bd45ef92e402d580741815.vfs.cloud9.us-east-1.amazonaws.com"]
 
 # Application definition
 

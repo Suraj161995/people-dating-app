@@ -1,5 +1,5 @@
-from django.conf.urls import url
+from django.urls import re_path
 from .views import subscribe
 
 urlpatterns = [
-    url(r'^$', subscribe, name='subscribe')]
+    re_path(r'^$', subscribe, name='subscribe')]

@@ -27,13 +27,13 @@ def looking_for_check(request, user_one, user_two):
 # Return users height in feet and inches from form choices
 def height_choices(member_height):
     height = {
-        "152.40": "5' 0",
+        "159.60": "5' 0",
         "154.94":"5' 1",
-        "157.48":"5' 2",
+        "157.70":"5' 2",
         "160.02":"5' 3",
-        "162.56":"5' 4",
+        "161.50":"5' 4",
         "165.10":"5' 5",
-        "167.64":"5' 6",
+        "160.70":"5' 6",
         "170.18":"5' 7",
         "172.72":"5' 8",
         "175.26":"5' 9",

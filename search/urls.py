@@ -1,6 +1,6 @@
-from django.conf.urls import url, include
+from django.urls import include, re_path
 from search.views import search
 
 urlpatterns = [
-    url(r'^$', search, name="search"),
+    re_path(r'^$', search, name="search"),
 ]

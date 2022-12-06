@@ -1,7 +1,7 @@
-from django.conf.urls import url
+from django.urls import include, re_path
 from .views import index, preregister
 
 urlpatterns = [
-    url(r'^$', preregister, name='preregister'),
-    url(r'^home/', index, name="index"),
+    re_path(r'^$', preregister, name='preregister'),
+    re_path(r'^home/', index, name="index"),
 ]

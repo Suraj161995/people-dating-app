@@ -21,7 +21,7 @@ def premium_required(function):
             current_profile.save()
             return redirect(reverse('subscribe'))
         else:
-            if request.is_ajax():
+            if request.accepts('application/json'):
                 data = {}
                 data['redirect'] = '/subscribe'
                 return JsonResponse(data)

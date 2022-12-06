@@ -32,7 +32,7 @@
             <!--Member bio-->
             <div class="card-container">
                 <div class="card">
-                    <p>{% if member.profile.is_verified == "APPROVED" %}{{member.profile.bio}}{% else %}Our verification team is currently vetting this member. This user's profile will be visible soon.{%endif%}</p>
+                    <p>{% if member.profile.is_verified == "APPROVED" %}{{member.profile.bio}}{% else %}Our verification support team is currently verifying this member. This user's profile will be authorized and visible soon.{%endif%}</p>
                 </div>
             </div>
             {% if member.profile.is_verified == "APPROVED" %}
