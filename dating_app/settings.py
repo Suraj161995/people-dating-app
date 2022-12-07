@@ -45,7 +45,7 @@ SECRET_KEY = 'rz_+v)$2r&rgb_h90msytw56s1h&@qrgf09lu2$77*l4(t24ze'
 DEBUG = True
 
 #ALLOWED_HOSTS = [os.environ.get('HOSTNAME'), "5a824725c9bd45ef92e402d580741815.vfs.cloud9.us-east-1.amazonaws.com"]
-ALLOWED_HOSTS = ['127.0.0.1', "5a824725c9bd45ef92e402d580741815.vfs.cloud9.us-east-1.amazonaws.com"]
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -117,27 +117,27 @@ else:
     #     }
     # }
 
-    # DATABASES = {
-    #     'default': {
-    #         'ENGINE': 'django.db.backends.mysql',
-    #         'NAME': 'rds_database',
-    #         'HOST': 'database.c3rvep7bruyr.us-east-1.rds.amazonaws.com',
-    #         'USER': 'admin',
-    #         'PASSWORD': PASSWORD,
-    #         'PORT':'3306',
-    #     },
-    # }
-
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
             'NAME': 'rds_database',
-            'HOST': 'database-1.coi928zakksb.us-east-1.rds.amazonaws.com',
+            'HOST': 'database.c3rvep7bruyr.us-east-1.rds.amazonaws.com',
             'USER': 'admin',
             'PASSWORD': PASSWORD,
             'PORT':'3306',
         },
     }
+
+    # DATABASES = {
+    #     'default': {
+    #         'ENGINE': 'django.db.backends.mysql',
+    #         'NAME': 'rds_database',
+    #         'HOST': 'database-1.coi928zakksb.us-east-1.rds.amazonaws.com',
+    #         'USER': 'admin',
+    #         'PASSWORD': PASSWORD,
+    #         'PORT':'3306',
+    #     },
+    # }
 
 
 AWS_S3_OBJECT_PARAMETERS = {
